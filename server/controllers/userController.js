@@ -1,5 +1,7 @@
 const User = require('../models/user')
 const jwt = require('jsonwebtoken')
+const secret = process.env.SECRET
+const {hasher} = require('../helpers/hasher')
 
 module.exports = {
   signup: (req,res)=>{
@@ -40,7 +42,7 @@ module.exports = {
     .then(user=>{
       if(user){
         if(user[0].password == req.body.obj.password){
-          let token = jwt.sign({id: user[0]._id}, 'menguasai dunia')
+          let token = jwt.sign({id: user[0]._id}, 'secret')
           res.status(200).json({
             message: `this is user`,
             token: token
