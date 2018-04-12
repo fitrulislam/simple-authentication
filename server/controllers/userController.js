@@ -3,19 +3,35 @@ const jwt = require('jsonwebtoken')
 
 module.exports = {
   signup: (req,res)=>{
-    const newUser = new User(req.body.obj)
-    newUser.save()
-      .then(data=>{
-        res.status(201).json({
-          message: `user created`,
-          data: data
+    User.find({
+      email: req.body.obj.email
+    })
+    .then(user=>{
+      if(user){
+        res.status(200).json({
+          message: 'Email is registered, try another email'
         })
+      } else {
+        const newUser = new User(req.body.obj)
+        newUser.save()
+          .then(data=>{
+            res.status(201).json({
+              message: `user created`,
+              data: data
+            })
+          })
+          .catch(err=>{
+            res.status(400).json({
+              message: `user not created`
+            })
+          })
+      }
+    })
+    .catch(err=>{
+      res.status(400).json({
+        message: err
       })
-      .catch(err=>{
-        res.status(400).json({
-          message: `user not created`
-        })
-      })
+    })
   },
   signin: (req,res)=>{
     User.find({
