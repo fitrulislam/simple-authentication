@@ -1,0 +1,31 @@
+{
+  "name": "simple-authentication",
+  "version": "1.0.0",
+  "description": "Pada ujian mid phase ini kita akan menguji sejauh mana hasil dari pembelajaran yang telah kita lakukan selama kurang lebih 2 minggu ini. Kamu akan diminta membuat **login dan register**.  pada sebuah web yang tentunya berfungsi untuk **login dan register** saja, seperti user bisa melakukan register, lalu setelah itu user bisa melakukan login.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fitrulislam/simple-authentication.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fitrulislam/simple-authentication/issues"
+  },
+  "homepage": "https://github.com/fitrulislam/simple-authentication#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.2.1",
+    "mongoose": "^5.0.14",
+    "morgan": "^1.9.0",
+    "serve-favicon": "^2.5.0"
+  }
+}
