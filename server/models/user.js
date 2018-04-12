@@ -6,6 +6,8 @@ const userSchema = new Schema({
   email: String,
   username: String,
   password: String
+},{
+  timestamps: true
 })
 
 let User = mongoose.model('Users', userSchema)
